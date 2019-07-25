@@ -1,0 +1,72 @@
+@(filmes : List[Filme])
+
+@main("Listar Filmes"){
+
+    <h2>Lista de Filmes</h2>
+    <ul>
+        @for(filme <- filmes){
+            <li>@filme.getNome@filme.getprioridade 
+                <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+            </li> 
+        }
+    </ul>
+
+    <h2>Lista de filmes nao assistidos em ordem de prioridade</h2>
+    <ul>
+        @for(filme <- filmes){
+            @if(filme.getprioridade == 1){
+                @if(filme.getassistido == false){
+                    <li style="display: flex">
+                        <h4 style="margin-right: 5%">@filme.getNome</h4> <h4>@filme.getprioridade</h4> 
+                        <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+                        <a href="@controllers.routes.HomeController.assistido(filmes.indexOf(filme))" style="margin-right: 30px; color: white; background-color: green; text-decoration: none;">Marcar como assitido</a>
+                    </li> 
+                }
+            }    
+        }      
+        @for(filme <- filmes){
+            @if(filme.getprioridade == 2){
+                @if(filme.getassistido == false){
+                    <li style="display: flex">
+                        <h4 style="margin-right: 5%">@filme.getNome</h4> <h4>@filme.getprioridade</h4> 
+                        <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+                        <a href="@controllers.routes.HomeController.assistido(filmes.indexOf(filme))" style="margin-right: 30px; color: white; background-color: green; text-decoration: none;">Marcar como assitido</a>
+                    </li> 
+                } 
+            }    
+        }
+        @for(filme <- filmes){
+            @if(filme.getprioridade == 3){
+                @if(filme.getassistido == false){
+                    <li style="display: flex">
+                        <h4 style="margin-right: 5%">@filme.getNome</h4> <h4>@filme.getprioridade</h4> 
+                        <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+                        <a href="@controllers.routes.HomeController.assistido(filmes.indexOf(filme))" style="margin-right: 30px; color: white; background-color: green; text-decoration: none;">Marcar como assitido</a>
+                    </li> 
+                } 
+            }    
+        }
+        @for(filme <- filmes){
+            @if(filme.getprioridade == 4){
+                @if(filme.getassistido == false){
+                    <li style="display: flex">
+                        <h4 style="margin-right: 5%">@filme.getNome</h4> <h4>@filme.getprioridade</h4> 
+                        <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+                        <a href="@controllers.routes.HomeController.assistido(filmes.indexOf(filme))" style="margin-right: 30px; color: white; background-color: green; text-decoration: none;">Marcar como assitido</a>
+                    </li> 
+                } 
+            }    
+        }
+        @for(filme <- filmes){
+            @if(filme.getprioridade == 5){
+                @if(filme.getassistido == false){
+                    <li style="display: flex">
+                        <h4 style="margin-right: 5%">@filme.getNome</h4> <h4>@filme.getprioridade</h4> 
+                        <a href="@controllers.routes.HomeController.remover(filmes.indexOf(filme))" style="margin: 0px 30px; color: white; background-color: red; text-decoration: none;"> Excluir filme </a>
+                        <a href="@controllers.routes.HomeController.assistido(filmes.indexOf(filme))" style="margin-right: 30px; color: white; background-color: green; text-decoration: none;">Marcar como assitido</a>
+                    </li> 
+                } 
+            }    
+        }
+    </ul>
+}
